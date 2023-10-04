@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 
 import Sidebar from "@/components/Sidebar";
+import SupbabaseProvider from "@/providers/SupabaseProvider";
 
 import "./globals.css";
 
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Sidebar>{children}</Sidebar>
+        <SupbabaseProvider>
+          <Sidebar>{children}</Sidebar>
+        </SupbabaseProvider>
       </body>
     </html>
   );
