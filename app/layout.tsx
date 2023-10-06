@@ -6,8 +6,6 @@ import SupbabaseProvider from "@/providers/SupabaseProvider";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProver from "@/providers/ToasterProvider";
-
-import "./globals.css";
 import getSongsByUserId from "@/actions/getSongsByUserId";
 
 const font = Figtree({ subsets: ["latin"] });
@@ -16,6 +14,8 @@ export const metadata: Metadata = {
   title: "Spotify Clone",
   description: "Listen to music!",
 };
+
+export const revalidate = 0;
 
 export default async function RootLayout({
   children,

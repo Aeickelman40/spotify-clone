@@ -10,40 +10,21 @@ interface MediaItemProps {
   onClick?: (id: string) => void;
 }
 
-const MediaItem: React.FC<MediaItemProps> = ({ data, onClick }) => {
+const MediaItem = ({ data, onClick }: MediaItemProps) => {
   const imageUrl = useLoadImage(data);
 
-  //   const handleClick = () => {
-  //     if (onClick) {
-  //       return onClick(data.id);
-  //     }
-
-  //     return player.setId(data.id);
-  //   };
+  const handleClick = () => {
+    if (onClick) {
+      return onClick(data.id);
+    }
+  };
 
   return (
     <div
-      onClick={() => {}}
-      className="
-        flex 
-        items-center 
-        gap-x-3 
-        cursor-pointer 
-        hover:bg-neutral-800/50 
-        w-full 
-        p-2 
-        rounded-md
-      "
+      onClick={handleClick}
+      className="flex items-center gap-x-3 cursor-pointer hover:bg-neutral-800/50 w-full p-2 rounded-md"
     >
-      <div
-        className="
-          relative 
-          rounded-md 
-          min-h-[48px] 
-          min-w-[48px] 
-          overflow-hidden
-        "
-      >
+      <div className="relative rounded-md min-h-[48px] min-w-[48px] overflow-hidden">
         <Image
           fill
           src={imageUrl || "/images/liked.png"}
