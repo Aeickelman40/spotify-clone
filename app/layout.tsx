@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import SupbabaseProvider from "@/providers/SupabaseProvider";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
+import ToasterProver from "@/providers/ToasterProvider";
 
 import "./globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ToasterProver />
         <SupbabaseProvider>
           <UserProvider>
             <ModalProvider />
