@@ -8,6 +8,8 @@ import ModalProvider from "@/providers/ModalProvider";
 import ToasterProver from "@/providers/ToasterProvider";
 import getSongsByUserId from "@/actions/getSongsByUserId";
 
+import "./globals.css";
+
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
