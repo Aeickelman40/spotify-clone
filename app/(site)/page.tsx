@@ -22,6 +22,7 @@ export default async function Home() {
     >
       <Header>
         <div className="mb-2">
+          {/* TODO: Check if user is logged in and conditionally render welcome message */}
           <h1
             className="
             text-white 
