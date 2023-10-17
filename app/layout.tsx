@@ -8,6 +8,7 @@ import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProver from "@/providers/ToasterProvider";
 import getSongsByUserId from "@/actions/getSongsByUserId";
+import getActiveProductsWithPrices from "@/actions/getActiveProductsWithPrices";
 
 import "./globals.css";
 
@@ -26,6 +27,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const userSongs = await getSongsByUserId();
+  const products = await getActiveProductsWithPrices();
 
   return (
     <html lang="en">
@@ -33,7 +35,7 @@ export default async function RootLayout({
         <ToasterProver />
         <SupbabaseProvider>
           <UserProvider>
-            <ModalProvider />
+            <ModalProvider products={products} />
             <Sidebar songs={userSongs}>{children}</Sidebar>
             <Player />
           </UserProvider>
