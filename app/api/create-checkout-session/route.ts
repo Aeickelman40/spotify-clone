@@ -40,7 +40,7 @@ export async function POST(request: Request) {
         metadata,
       },
       success_url: `${getURL()}/account`,
-      cancel_url: `${getURL()}/`,
+      cancel_url: `${getURL()}/account`,
     });
 
     return NextResponse.json({ sessionId: session.id });
